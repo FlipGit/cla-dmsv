@@ -10,6 +10,14 @@ DMSV.ContainerView = Backbone.View.extend({
 	},
 
 	appendOne: function(model) {
+
+		// Some error checking.
+		// This seems to happen when the Cla Indexing service is not running
+		if(model.has("success") && model.get("success") === false) {
+			alert("Sorry! There was an error communicating with the server");
+			return false;
+		}
+
 		if(model.get("type") === "folder") {
 			this.$el.append(new DMSV.FolderView({ model: model }).render().el);
 		} else if(model.get("type") === "document") {
