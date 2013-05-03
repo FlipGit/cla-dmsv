@@ -43,7 +43,10 @@ DMSV.CreateFolderView = Backbone.View.extend({
 				DMSV.objectCollection.fetch();
 			},
 			error: function(model, xhr, options) {
-				console.log(model, xhr, options);
+				// TODO: Handle this properly
+				if(typeof console === "object") {
+					console.log(model, xhr, options);
+				}
 			}
 		});
 
@@ -173,7 +176,6 @@ DMSV.SearchView = Backbone.View.extend({
 
 	// Clear the search field
 	clearSearch: function() {
-		console.log("Clear search");
 		this.$("#search").val('');
 		this.search();
 
