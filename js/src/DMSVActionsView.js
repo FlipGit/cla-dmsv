@@ -93,21 +93,24 @@ DMSV.AddFolderDocumentButtons = Backbone.View.extend({
 
 	initialize: function() {
 		_.bindAll(this, "redraw");
-		DMSV.breadcrumbCollection.on("reset", this.redraw);
+		DMSV.breadcrumbCollection.on("sync", this.redraw);
 	},
 
 	redraw: function(root_check) {
-		var perm_check = false;
-		if(DMSV.activeFolder === DMSV.rootFolder) {
-			perm_check = DMSV.options.root_edit;
+		var add_folder = false;
+		var add_doc = false;
+		if(DMSV.activeFolder === 0) {
+            add_folder = DMSV.options.root_edit;
+            add_doc = DMSV.options.root_edit;
 		} else {
-			perm_check = DMSV.breadcrumbCollection.change_content;
+			add_folder = DMSV.breadcrumbCollection.add_folder;
+			add_doc = DMSV.breadcrumbCollection.add_doc;
 		}
 
-		this.$("#dmsv-add-folder-link").toggle(perm_check);
-		this.$("#dmsv-add-document-link").toggle(perm_check && DMSV.activeFolder !== 0);
-		this.$("#dmsv-add-folder-span").toggle(!perm_check);
-		this.$("#dmsv-add-document-span").toggle(!perm_check && DMSV.activeFolder !== 0);
+		this.$("#dmsv-add-folder-link").toggle(add_folder);
+		this.$("#dmsv-add-document-link").toggle(add_doc && DMSV.activeFolder !== 0);
+		this.$("#dmsv-add-folder-span").toggle(!add_folder);
+		this.$("#dmsv-add-document-span").toggle(!add_doc && DMSV.activeFolder !== 0);
 	}
 });
 
@@ -130,7 +133,7 @@ DMSV.ViewInDMSView = Backbone.View.extend({
 // ---------------
 DMSV.SearchView = Backbone.View.extend({
 	el: "#search_form",
-
+    options: {},
 	events: {
 		"keyup #search": "search",
 		"keydown #search": "detectEnter",

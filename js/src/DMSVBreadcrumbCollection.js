@@ -4,7 +4,8 @@ DMSV.BreadcrumbCollection = Backbone.Collection.extend({
 	model: DMSV.BreadcrumbItem,
 
 	// Flag to determine whether we can change the contents in this folder
-	change_content: false,
+	add_folder: false,
+	add_doc: false,
 
 	url: function() {
 		return "/intranet/rest/documents/folder/" + DMSV.activeFolder + "/ui";
@@ -39,7 +40,8 @@ DMSV.BreadcrumbCollection = Backbone.Collection.extend({
 		var ret = [];
 
 		// Check for the permission change_content flag, set the internal property accordingly
-		this.change_content = _.has(response, "perms") && _.has(response.perms, "change_content") && response.perms.change_content === true;
+		this.add_folder = _.has(response, "permission") && _.has(response.permission, "add_folder") && response.permission.add_folder === true;
+		this.add_doc = _.has(response, "permission") && _.has(response.permission, "add_doc") && response.permission.add_doc === true;
 
 		// If out root is 0, proceed as usual
 		if(DMSV.rootFolder === 0) {
@@ -47,10 +49,12 @@ DMSV.BreadcrumbCollection = Backbone.Collection.extend({
 		}
 
 		// Otherwise, we only want to folders that are children of our Root
+		var root_reached = false;
 		_.each(response.path, function(item) {
-			if(item['id'] >= DMSV.rootFolder) {
+			if (item['id'] == DMSV.rootFolder)
+				root_reached = true;
+			if (root_reached)
 				ret.push(item);
-			}
 		});
 		return ret;
 	}

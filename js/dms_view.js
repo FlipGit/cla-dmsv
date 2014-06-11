@@ -25,28 +25,28 @@ var claIcon = function(fileName) {
 Modernizr.load([{
 	both: [
 		"/intranet/js/backbone-min.js",
-		"/intranet/js/jquery.tmpl.min.js",
+		"/intranet/dmsv/js/jquery.tmpl-min.js",
 
-		"/intranet/documents/js/src/dmsv/DMSVFolderModel.js?x=1",
-		"/intranet/documents/js/src/dmsv/DMSVDocumentModel.js?x=1",
-		"/intranet/documents/js/src/dmsv/DMSVBreadcrumbItemModel.js?x=1",
+		"/intranet/dmsv/js/src/DMSVFolderModel.js?x=1",
+		"/intranet/dmsv/js/src/DMSVDocumentModel.js?x=1",
+		"/intranet/dmsv/js/src/DMSVBreadcrumbItemModel.js?x=1",
 
-		"/intranet/documents/js/src/dmsv/DMSVObjectCollection.js?x=1",
-		"/intranet/documents/js/src/dmsv/DMSVBreadcrumbCollection.js?x=1",
+		"/intranet/dmsv/js/src/DMSVObjectCollection.js?x=1",
+		"/intranet/dmsv/js/src/DMSVBreadcrumbCollection.js?x=1",
 
-		"/intranet/documents/js/src/dmsv/DMSVContainerView.js?x=1",
-		"/intranet/documents/js/src/dmsv/DMSVFolderView.js?x=2",
-		"/intranet/documents/js/src/dmsv/DMSVDocumentView.js?x=2",
-		"/intranet/documents/js/src/dmsv/DMSVBreadcrumbView.js?x=2",
+		"/intranet/dmsv/js/src/DMSVContainerView.js?x=1",
+		"/intranet/dmsv/js/src/DMSVFolderView.js?x=2",
+		"/intranet/dmsv/js/src/DMSVDocumentView.js?x=2",
+		"/intranet/dmsv/js/src/DMSVBreadcrumbView.js?x=2",
 
-		"/intranet/documents/js/src/dmsv/DMSVSearchModel.js?x=2",
+		"/intranet/dmsv/js/src/DMSVSearchModel.js?x=2",
 
-		"/intranet/documents/js/src/dmsv/DMSVActionsView.js?x=2",
+		"/intranet/dmsv/js/src/DMSVActionsView.js?x=2",
 
-		"/intranet/documents/js/src/dmsv/DMSVShowMoreView.js?x=2",
+		"/intranet/dmsv/js/src/DMSVShowMoreView.js?x=2",
 
-		"/intranet/gallery/js/jquery.lightbox.js",
-		"/intranet/gallery/css/jquery.lightbox.css"
+		"/intranet/dmsv/js/lightbox/js/jquery.lightbox.js",
+		"/intranet/dmsv/js/lightbox/css/jquery.lightbox.css"
 	],
 	complete: function() {
 		DMSV.styleSwitchView = new DMSV.StyleSwitchView();

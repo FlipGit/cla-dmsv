@@ -8,8 +8,9 @@ DMSV.BreadcrumbView = Backbone.View.extend({
 	},
 
 	initialize: function() {
-		_.bindAll(this, "reset");
-		this.collection.on("reset", this.reset);
+		_.bindAll(this, "change");
+		this.collection.on("add", this.change);
+		this.collection.on("remove", this.change);
 	},
 
 	// Breadcrumb item clicked
@@ -22,7 +23,7 @@ DMSV.BreadcrumbView = Backbone.View.extend({
 	},
 
 	// Reset the breadcrumb items
-	reset: function() {
+	change: function() {
 		this.$el.find("li.dynamic-li").remove();
 
 		this.collection.each(function(item) {
@@ -43,12 +44,9 @@ DMSV.BreadcrumbItemView = Backbone.View.extend({
 	},
 
 	render: function() {
-		if(DMSV.breadcrumbCollection.last() === this.model) {
-			this.model.set({ last_item: true });
-		}
-
-		// Determine whether we're the last item
+		// Determine whether we're the first and last item
 		this.model.set({ first_item: DMSV.breadcrumbCollection.first() === this.model });
+		this.model.set({ last_item: DMSV.breadcrumbCollection.last() === this.model });
 
 		this.$el.html($(this.tmpl).tmpl(this.model.toJSON()));
 		return this;

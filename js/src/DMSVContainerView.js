@@ -4,9 +4,9 @@ DMSV.ContainerView = Backbone.View.extend({
 	el: "#dmsv-container",
 
 	initialize: function() {
-		_.bindAll(this, "appendOne", "reset");
-		this.collection.on("add", this.appendOne);
-		this.collection.on("reset", this.reset);
+		_.bindAll(this, "change");
+		this.collection.on("add", this.change);
+		this.collection.on("remove", this.change);
 	},
 
 	appendOne: function(model) {
@@ -27,7 +27,7 @@ DMSV.ContainerView = Backbone.View.extend({
 		}
 	},
 
-	reset: function() {
+    change: function() {
 		this.$el.empty();
 		this.collection.each(function(object) {
 			this.appendOne(object);

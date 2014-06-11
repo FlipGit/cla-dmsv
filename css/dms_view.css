@@ -29,7 +29,7 @@
 	position: absolute;
 	z-index: 100;
 	opacity: 0.5;
-	background: url(/interface_default/documents/dmsv/images/loading.gif) no-repeat center white;
+	background: url(/intranet/dmsv/images/loading.gif) no-repeat center white;
 }
 
 /* list view */

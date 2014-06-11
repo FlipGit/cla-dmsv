@@ -5,10 +5,10 @@ The Claromentis Document Management System View Component allows you to embed a 
 
 [![](https://raw.github.com/Claromentis/cla-dmsv/master/screenshot.png)](https://raw.github.com/Claromentis/cla-dmsv/master/screenshot.png)
 
-To use, simply copy the contents in to your `$CLA_ROOT` and embed the following component tag:
+To use, simply copy the contents of this component into "/intranet/dmsv/" in Claromentis and embed the following component tag:
 
 ```html
-<component class="DocsDMSVComponent" root_folder="10">
+<component class="DmsvComponent" root_folder="10">
 ```
 
 This will ensure the root folder for the DMSV is folder ID 10.

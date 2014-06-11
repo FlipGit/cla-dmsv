@@ -1,15 +1,15 @@
 <!--@head@
-	<link type="text/css" href="/interface_default/documents/css/dms_view.css" media="screen" rel="stylesheet" />
-	<script type="text/javascript" src="/intranet/documents/js/src/dmsv/dms_view.js"></script>
+	<link type="text/css" href="/intranet/dmsv/css/dms_view.css" media="screen" rel="stylesheet" />
+	<script type="text/javascript" src="/intranet/dmsv/js/dms_view.js"></script>
 -->
 <script type="text/javascript">
 	DMSV.icons = ${icons.json};
 	DMSV.activeFolder = DMSV.rootFolder = ${root_folder.body};
 	DMSV.options = ${dmsv_options.json};
 </script>
-<include file="../documents/dmsv/tmpl/folder.tmpl.html">
-<include file="../documents/dmsv/tmpl/document.tmpl.html">
-<include file="../documents/dmsv/tmpl/breadcrumb_item.tmpl.html">
+<include file="tmpl/folder.tmpl.html">
+<include file="tmpl/document.tmpl.html">
+<include file="tmpl/breadcrumb_item.tmpl.html">
 
 <div class="dms-view">
 	<div class="documentSearch row-fluid">
@@ -69,8 +69,8 @@
 
 
 <!-- add document -->
-<include file="includes/add_document_popup.html">
+<include file="../documents/includes/add_document_popup.html">
 
 <!-- add folder -->
-<include file="includes/add_folder_popup.html">
+<include file="../documents/includes/add_folder_popup.html">
 </div>

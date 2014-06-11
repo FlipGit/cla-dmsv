@@ -4,7 +4,7 @@
  *
  * To use this, simply embed:
  *
- *	 <component class="DocsDMSVComponent">
+ *	 <component class="DmsvComponent">
  *
  * On your page.
  *
@@ -13,7 +13,8 @@
  *
  * @author Julian Cohen [julian.cohen@claromentis.com]
  */
-class DocsDMSVComponent extends TemplaterComponentTmpl {
+class DmsvComponent extends TemplaterComponentTmpl
+{
 
 	public function Show($attributes)
 	{
@@ -34,6 +35,6 @@ class DocsDMSVComponent extends TemplaterComponentTmpl {
 		// Pass along some options
 		$args['dmsv_options.json'] = array('root_edit' => ERMSBrowser::GetPermsChecker(false)->CanChangeContent(null));
 
-		return $this->CallTemplater('documents/dms_view.html', $args, $datasources);
+		return $this->CallTemplater('dmsv/dms_view.html', $args, $datasources);
 	}
 }

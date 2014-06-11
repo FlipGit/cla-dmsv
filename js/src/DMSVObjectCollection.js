@@ -36,7 +36,11 @@ DMSV.ObjectCollection = Backbone.Collection.extend({
 			$("#docSpinner").show();
 		};
 		options.complete = function() {
-			$("#docSpinner").fadeOut();
+            if ($("#docSpinner").is(':visible')) {
+                $("#docSpinner").fadeOut();
+            } else {
+                $("#docSpinner").hide();
+            }
 		};
 
 		// Are we doing a search?
