@@ -1,0 +1,10 @@
+<script id="breadcrumb-item-tmpl" type="text/x-jquery-tmpl">
+	{{if !first_item}}
+		<span class="divider">&raquo;</span>
+	{{/if}}
+	{{if last_item}}
+		<span class="active">{{= title}}</span>
+	{{else}}
+		 <a href="#" class="breadcrumb-item" id="breadcrumb-item-{{= id}}">{{= title}}</a>
+	{{/if}}
+</script>

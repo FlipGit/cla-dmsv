@@ -1,0 +1,17 @@
+<script id="document-tmpl" type="text/x-jquery-tmpl">
+	<div class="documentDetails">
+		{{if lightbox}}
+			<a rel="lightbox" href="/intranet/documents/{{= parent_id}}/{{= doc_id}}/{{= title}}?format=image&width=715&height=580">
+				<em class="{{= claIcon(title)}}"></em>
+				<img src="/intranet/documents/{{= parent_id}}/{{= doc_id}}/{{= encodeURIComponent(title)}}?format=thumb&amp;width=64&amp;height=64" alt="" />
+				{{= title}}
+			</a>
+		{{else}}
+			<a href="/intranet/documents/{{= parent_id}}/{{= doc_id}}/{{= title}}?action=download">
+				<em class="{{= claIcon(title)}}"></em>
+				<img src="/intranet/documents/{{= parent_id}}/{{= doc_id}}/{{= encodeURIComponent(title)}}?format=thumb&amp;width=64&amp;height=64" alt="" />
+				{{= title}}
+			</a>
+		{{/if}}
+	</div>
+</script>

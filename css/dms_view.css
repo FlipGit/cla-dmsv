@@ -1,0 +1,139 @@
+.dms-view {
+	border: 1px solid #DDD;
+	padding: 3px 10px;
+	background: #fefefe;
+	-webkit-border-radius: 	 3px;
+	-moz-border-radius: 	   3px;
+	border-radius: 			     3px;
+	-webkit-box-shadow: 	inset 0 1px 5px #eee;
+	-moz-box-shadow: 		  inset 0 1px 5px #eee;
+	box-shadow: 			    inset 0 1px 5px #eee;
+}
+.view-in-documents {
+  float: right;
+  margin: 10px;
+  font-size: 12px;
+}
+.search-reset {
+	background: transparent;
+	border: 0;
+	position: absolute;
+	cursor: pointer;
+	margin-left: -28px;
+	margin-top: 3px;
+}
+.doc-spinner {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 100;
+	opacity: 0.5;
+	background: url(/intranet/dmsv/images/loading.gif) no-repeat center white;
+}
+
+/* list view */
+.documentList {
+	margin: 0 0 12px;
+	position: relative;
+	min-height: 120px;
+	max-height: 250px;
+	overflow: auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.documentItem {
+  border: 1px solid transparent;
+  padding: 5px 0;
+  margin: 5px 0;
+  text-indent: 5px;
+  background-color: #fff;
+}
+.documentItem:hover {
+  background-color: #fafafa;
+  border-color: #ddd;
+}
+.show-more {
+  clear: left;
+}
+.show-more a {
+  background: #f5f5f5;
+  padding: 4px;
+  display: block;
+  border: 1px solid transparent;
+}
+.show-more a:hover {
+  border-color: #ddd;
+}
+
+/* VIEW: minimal list */
+.documentList .min-list-view .documentItem {
+  padding: 3px 0;
+  margin: 1px 0;
+}
+.documentList .min-list-view img {
+	display: none;
+}
+
+/* VIEW: icons */
+.documentList .icons-view .documentDoc em {
+	display: none;
+}
+.documentList .icons-view img {
+  width: 48px;
+  float: none;
+}
+.documentList .icons-view .documentItem {
+  border-color: transparent;
+  background-color: transparent;
+}
+.documentList .icons-view .documentItem {
+  float: left;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  margin: 10px 10px 0 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+.documentList .icons-view img,
+.documentList .icons-view .documentLink {
+  display: block;
+  margin: 0 auto;
+}
+
+.documentList .icons-view em {
+  background-image: url(/images/icons/iconset_large.png);
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  display: block;
+  height: 48px;
+  width: 48px;
+}
+.documentList .icons-view .cla-icon-doc-access 					{ background-position: -192px 0; }
+.documentList .icons-view .cla-icon-doc-excel-csv 				{ background-position: -288px -48px; }
+.documentList .icons-view .cla-icon-doc-excel-table 			{ background-position: -336px -48px; }
+.documentList .icons-view .cla-icon-doc-film 					{ background-position: -288px 0; }
+.documentList .icons-view .cla-icon-doc-google 					{ background-position: -625px 0; }
+.documentList .icons-view .cla-icon-doc-illustrator 			{ background-position: -384px 0; }
+.documentList .icons-view .cla-icon-doc-music 					{ background-position: 0 -48px; }
+.documentList .icons-view .cla-icon-doc-office 					{ background-position: 0 0; }
+.documentList .icons-view .cla-icon-doc-pdf 					{ background-position: -144px -48px; }
+.documentList .icons-view .cla-icon-doc-photoshop 				{ background-position: -336px 0; }
+.documentList .icons-view .cla-icon-doc-text-image 				{ background-position: -96px -48px; }
+.documentList .icons-view .cla-icon-email 						{ background-position: -576px -48px; }
+.documentList .icons-view .cla-icon-feed-document 				{ background-position: -480px 0; }
+.documentList .icons-view .cla-icon-folder 						{ background-position: -96px 0; }
+.documentList .icons-view .cla-icon-gdoc-link 					{ background-position: -673px 0; }
+.documentList .icons-view .cla-icon-image1 						{ background-position: -144px 0; }
+.documentList .icons-view .cla-icon-marker 						{ background-position: -674px -48px; }
+.documentList .icons-view .cla-icon-page 						{ background-position: -624px -48px; }
+.documentList .icons-view .cla-icon-page-code 					{ background-position: -384px -48px; }
+.documentList .icons-view .cla-icon-page-white-database 		{ background-position: -432px -48px; }
+.documentList .icons-view .cla-icon-page-white-flash 			{ background-position: -432px 0; }
+.documentList .icons-view .cla-icon-page-white-php 				{ background-position: -48px -48px; }
+.documentList .icons-view .cla-icon-page-white-powerpoint 		{ background-position: -48px 0; }
+.documentList .icons-view .cla-icon-page-white-text 			{ background-position: -240px -48px; }
+.documentList .icons-view .cla-icon-page-white-wrench 			{ background-position: -528px -48px; }
+.documentList .icons-view .cla-icon-page-white-zip 				{ background-position: -192px -48px; }

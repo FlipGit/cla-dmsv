@@ -1,0 +1,76 @@
+<!--@head@
+	<link type="text/css" href="/intranet/dmsv/css/dms_view.css" media="screen" rel="stylesheet" />
+	<script type="text/javascript" src="/intranet/dmsv/js/dms_view.js"></script>
+-->
+<script type="text/javascript">
+	DMSV.icons = ${icons.json};
+	DMSV.activeFolder = DMSV.rootFolder = ${root_folder.body};
+	DMSV.options = ${dmsv_options.json};
+</script>
+<include file="tmpl/folder.tmpl.html">
+<include file="tmpl/document.tmpl.html">
+<include file="tmpl/breadcrumb_item.tmpl.html">
+
+<div class="dms-view">
+	<div class="documentSearch row-fluid">
+		<div class="span6">
+			<div class="btn-toolbar">
+				<form id="search_form" action="" method="post" class="form-horizontal">
+					<input type="text" name="search" id="search" class="search input-xlarge" placeholder="Search..." />
+					<button name="reset" id="reset" rel="tooltip" class="search-reset" data-original-title="Reset">&times;</button>
+					<button type="submit" name="search" class="search-button btn btn-primary" style="display: none;">Search</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="span6">
+			<div class="btn-toolbar pull-right" id="add-folder-docs-btns">
+				<div class="btn-group">
+					<a href="#addDocumentPopup" id="dmsv-add-document-link" rel="tooltip" class="btn" data-toggle="modal" data-original-title="Add Document"><span class="cla-icon-page-white-text-add"></span></a>
+				</div>
+				<div class="btn-group">
+					<a href="#addFolderPopup" id="dmsv-add-folder-link" rel="tooltip" class="btn" data-toggle="modal" data-original-title="Add Folder"><span class="cla-icon-folder-add"></span></a>
+				</div>
+				<div class="btn-group" id="dmsv-add-document-span">
+					<span class="btn disabled"><span class="cla-icon-page-white-text-add"></span></span>
+				</div>
+				<div class="btn-group" id="dmsv-add-folder-span">
+					<span class="btn disabled"><span class="cla-icon-folder-add"></span></span>
+				</div>
+				<div id="documentViewSize" class="btn-group">
+					<a href="#" class="btn" data-original-title="List View" rel="tooltip" data-set-class="min-list-view" data-view-mode="min">
+					<span class="cla-icon-view-list"></span></a>
+
+					<a href="#" class="btn active" data-original-title="Icon View" rel="tooltip" data-set-class="icons-view" data-view-mode="icon">
+					<span class="cla-icon-view-icon"></span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<a href="#" id="view-in-dms" class="view-in-documents"><em class="cla-icon-link"></em> View in Documents</a>
+
+	<!-- View for DMSV.BreadcrumbView -->
+	<ul id="dmsv-breadcrumb" class="breadcrumb">
+		<!-- Populated with DMSV.BreadcrumbItemView's -->
+	</ul>
+
+	<div class="documentList clearfix">
+		<div id="docSpinner" class="doc-spinner"></div>
+		<!-- View for DMSV.ContainerView -->
+		<div id="dmsv-container" class="icons-view">
+			<!-- Populated with DMSV.FolderView / DMSV.DocumentView -->
+		</div>
+		<div id="show-more" class="show-more">
+			<a href="#" id="show-more-link">Show more ...</a>
+		</div>
+	</div>
+
+
+
+<!-- add document -->
+<include file="../documents/includes/add_document_popup.html">
+
+<!-- add folder -->
+<include file="../documents/includes/add_folder_popup.html">
+</div>
