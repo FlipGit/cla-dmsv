@@ -185,3 +185,35 @@ DMSV.SearchView = Backbone.View.extend({
 		return false;
 	}
 });
+
+// temporary changes for buttons "Detailed Upload" and "Extended Edit"
+
+DMSV.DetailedUploadView = Backbone.View.extend({
+	el: "#addDocumentPopup",
+
+	events: {
+		"click input[name='ext_edit']": "detailedUpload"
+	},
+
+	detailedUpload: function() {
+		this.$el.find('input[name="fid"]').val(DMSV.activeFolder);
+		this.$el.find('form').prop('action', '/intranet/documents/add_doc.php');
+
+		return true;
+	}
+});
+
+DMSV.ExtendedEditView = Backbone.View.extend({
+	el: "#addFolderPopup",
+
+	events: {
+		"click input[name='ext_edit']": "extendedEdit"
+	},
+
+	extendedEdit: function() {
+		this.$el.find('input[name="parent_id"]').val(DMSV.activeFolder);
+		this.$el.find('form').prop('action', '/intranet/documents/add_folder.php');
+
+		return true;
+	}
+});
