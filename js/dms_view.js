@@ -71,5 +71,9 @@ Modernizr.load([{
 
 		DMSV.showMoreView = new DMSV.ShowMoreView();
 		DMSV.showMoreView.render();
+
+		// temporary changes for buttons in popup forms
+		DMSV.detailedUploadView = new DMSV.DetailedUploadView();
+		DMSV.extendedEditView = new DMSV.ExtendedEditView();
 	}
 }]);
