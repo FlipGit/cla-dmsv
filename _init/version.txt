@@ -1,3 +1,3 @@
 DMS View component
-1.2
-01.01
+1.2.1
+01.02
