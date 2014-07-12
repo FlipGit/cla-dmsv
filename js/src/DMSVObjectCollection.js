@@ -77,6 +77,9 @@ DMSV.ObjectCollection = Backbone.Collection.extend({
 		this.start = this.start + this.num;
 		options = options || {};
 		options.add = true;
+		options.reset = false;
+		options.update = true;
+		options.remove = false;
 		this.fetch(options);
 	},
 
